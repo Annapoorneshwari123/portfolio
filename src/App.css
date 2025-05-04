@@ -9,42 +9,44 @@
 } */
 
 .home{
-  padding: 30px 10px;
-  background-color: #cfaceb;
+  padding: 0px 10px;
+  background-color: #37a690 ;
 }
 .heading{
   font-size: 3.5rem;
-  color:#4b236a;
+  color:#f7f7f8;
 }
 .subtitle{
   font-size: 2.1rem;
   font-weight: 600;
-  color: #4b236a;
+  color: #f7f7f8 ;
 }
 .btn{
-  background-color: #72399d !important;
+  background-color: #37a690 !important;
   color: #fff !important;
+  border: 1px solid #fff !important;
 }
 .heading span{
-  color: #f8f8f8;
+  color: #025e4c;
 }
 .main-heading{
    padding-left: 20px;
-   color:#4b236a;
+   color:#025e4c;
+   text-align: center;
 }
 .para,ul li{
   font-size: 1.3rem;
   letter-spacing: 1.1px;
   line-height: 2rem;
-  color: #72399d;
+  color: #025e4c;
 }
 .cardbtn{
   outline: none;
   border: 1px solid #fff !important;
   border-radius: 100px!important;
-  background-color: #c18feb !important;
+  background-color: #025e4c !important;
   margin: 10px 0px;
 }
 .cardbtn:hover{
-  background-color: #bea2d5 !important;
+  background-color: #37a690 !important;
 }

@@ -1,42 +1,38 @@
-import React from 'react'
-import { Nav, Navbar } from 'react-bootstrap'
+import React, { useState } from 'react';
 import './header.css'
 
-function Header() {
-  return (
-  
-       <Navbar collapseOnSelect expand="lg"  variant="dark" className='navbar '>
- <div>
- <Navbar.Brand href="/" className='fs-4 fw-normal'>PORTFOLIO</Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  </div>
- <div>
- <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link href="/">HOME</Nav.Link>
-      <Nav.Link href="/">ABOUT</Nav.Link>
-      <Nav.Link href="/education">EDUCATION</Nav.Link>
-      <Nav.Link href="/projects">PROJECTS</Nav.Link>
-      <Nav.Link href="/contact">CONTACT</Nav.Link>
-      {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown> */}
-    </Nav>
-    {/* <Nav>
-      <Nav.Link href="#deets">More deets</Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">
-        Dank memes
-      </Nav.Link>
-    </Nav> */}
-  </Navbar.Collapse>
- </div>
-</Navbar>
-    
-  )
-}
+const Header = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
-export default Header
+  const handleToggle = () => setMenuOpen(!isMenuOpen);
+
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setMenuOpen(false);
+  };
+
+  return (
+    <header >
+      <div className="d-flex align-items-center justify-content-between">
+        <a href='/' className="head">Portfolio</a>
+        {/* <button onClick={handleToggle} className="md:hidden">☰</button> */}
+        <nav className={`md:d-flex space-x-6 ${isMenuOpen ? 'block' : 'hidden'} md:block`}>
+          <button onClick={() => scrollToSection('home')} className="hover:text-blue-500">Home</button>
+          <button onClick={() => scrollToSection('about')} className="hover:text-blue-500">About</button>
+          <button onClick={() => scrollToSection('education')} className="hover:text-blue-500">Education</button>
+          <button onClick={() => scrollToSection('project')} className="hover:text-blue-500">Projects</button>
+          <button onClick={() => scrollToSection('skills')} className="hover:text-blue-500">Skills</button>
+          <button onClick={() => scrollToSection('contact')} className="hover:text-blue-500">Contact</button>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+const Section = ({ id, title, children }) => (
+  <section id={id} className=" px-6   bg-gray-50 border-b">
+    <h2 className="text-3xl font-bold mb-4">{title}</h2>
+    <p className="text-gray-700 text-lg">{children}</p>
+  </section>
+);
+export {Header,Section}

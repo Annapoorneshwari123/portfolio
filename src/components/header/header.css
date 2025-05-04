@@ -1,14 +1,46 @@
-
-div .navbar{
-    padding: 20px 50px;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color:transparent;
+    position: sticky;
+    width: 100%;
+    top: 0;
+}
+header div{
+    margin: 0;
+    padding:5px 20px;
+  
+}
+/* nav ul {
+    list-style-type: none;
+} */
+nav button{
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 3px 18px;
+    background-color: transparent;
+    color:#046854;
+}
+nav button:active{
+    color: #37a690;
+}
+.head{
+   text-decoration: none;
+   font-size: 1.8rem; 
+   font-weight: 500;
+   color: #04705a;
+}
+nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
-    background-color: #00000000;
-    width: 100%;
-    box-shadow: 5px 5px 10px #0000003d;
-}
-Nav a{
-    color: #fff !important;
+    gap: 30px;
 }
